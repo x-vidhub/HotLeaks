@@ -4,145 +4,31 @@
   <meta charset="UTF-8">
   <title>Download Your Favorite Videos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<script>
+  const firstLink = "https://google.com";
+  const secondLink = "https://youtube.com";
+  const maxFirstLinkVisits = 3; // Change this to control how many times to show first link
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ff6a00, #ee0979);
-      color: white;
-      text-align: center;
-      animation: gradientShift 10s infinite alternate;
-      padding: 20px;
-    }
+  let visits = localStorage.getItem("visitCount");
 
-    @keyframes gradientShift {
-      0% { background: linear-gradient(135deg, #ff6a00, #ee0979); }
-      100% { background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); }
-    }
+  if (!visits) {
+    visits = 1;
+  } else {
+    visits = parseInt(visits) + 1;
+  }
 
-    header {
-      padding: 30px 10px;
-    }
+  localStorage.setItem("visitCount", visits);
 
-    header h1 {
-      font-size: 2.5em;
-      text-shadow: 2px 2px #000;
-      margin-bottom: 15px;
-    }
-
-    p.attention {
-      font-size: 1.1em;
-      margin-bottom: 25px;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
-
-    .cover-photo {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-      margin: 20px 0;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-
-    .buttons button {
-      background-image: linear-gradient(45deg, #92FE9D 0%, #00C9FF 100%);
-      border: none;
-      border-radius: 50px;
-      padding: 15px 30px;
-      font-size: 1em;
-      color: white;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .buttons button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      p.attention {
-        font-size: 1em;
-      }
-
-      .buttons button {
-        padding: 12px 25px;
-        font-size: 0.9em;
-      }
-
-      .cover-photo {
-        max-height: 200px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.6em;
-      }
-
-      .buttons {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .buttons button {
-        width: 80%;
-        margin: 0 auto;
-      }
-    }
-  </style>
+  if (visits <= maxFirstLinkVisits) {
+    window.location.href = firstLink;
+  } else {
+    window.location.href = secondLink;
+  }
+</script>
+  
+  
 </head>
-<body>
-  <header>
-    <h1>Get Full Video Now!</h1>
-    <h3>ATTENTION:</h3>
-    <p class="attention"> To get original video link complete the steps. complete ads properly and click on 'Get Direct Link' button</p>
-  </header>
-     <h3>👇👇💦😘💦👇👇</h3>
-  <img src="https://pbs.twimg.com/media/Gwo8s3-XMAE6dPV?format=jpg&name=900x900" alt="Cover Photo" class="cover-photo" />
-
-  <div class="buttons">
-   <button onclick="window.location.href='https://oddballconversation.com/bv3.Vw0VP_3Op-v/bDm/VzJKZFDA0/1hOBT/kkyaNITxcJxLL/TfU/5pOXTHIq1jN/zQIX';">
-  Step One
-</button>
-    <h1>👇</h1>
-    <button onclick="window.location.href='https://oddballconversation.com/bv3.Vw0VP_3Op-v/bDm/VzJKZFDA0/1hOBT/kkyaNITxcJxLL/TfU/5pOXTHIq1jN/zQIX';">
-  Step Two
-</button>
-    <h1>👇</h1>
-    <button onclick="window.location.href='https://oddballconversation.com/bv3.Vw0VP_3Op-v/bDm/VzJKZFDA0/1hOBT/kkyaNITxcJxLL/TfU/5pOXTHIq1jN/zQIX';">
-  Get Direct Link
-</button>
-    
-    
-  </div>
-
-  <br>
-
-
-  <p class="attention"> Ads need to play properly to acivate direct link<br>⚠️⚠️⚠️⚠️⚠️⚠️⚠️ </p>
+<h1>Watch Now</h1>
 </body>
 </html>
+
