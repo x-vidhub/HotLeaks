@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Download Your Favorite Videos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
+<!-- <script>
   const firstLink = "https://leakvideorahi02.blogspot.com/";     //hilltop
   const secondLink = "https://leakvideooli2.blogspot.com/";     // adsterra
 
@@ -20,6 +20,36 @@
     localStorage.setItem("visitCount", parseInt(visits) + 1);
     window.location.href = secondLink;
   }
+</script> -->
+
+
+
+  <script>
+  const firstLink = "https://leakvideorahi02.blogspot.com";
+  const secondLink = "https://leakvideooli2.blogspot.com/";
+  const loopLength = 3; // Number of visits before reset
+
+  let visits = localStorage.getItem("visitCount");
+
+  if (!visits) {
+    visits = 1;
+  } else {
+    visits = parseInt(visits) + 1;
+  }
+
+  // Reset if loop completed
+  if (visits > loopLength) {
+    visits = 1;
+  }
+
+  localStorage.setItem("visitCount", visits);
+
+  // Redirect logic
+  if (visits === 1) {
+    window.location.href = firstLink;
+  } else {
+    window.location.href = secondLink;
+  }
 </script>
   
   
@@ -27,6 +57,7 @@
 <h1>Watch Now</h1>
 </body>
 </html>
+
 
 
 
