@@ -7,21 +7,17 @@
 <script>
   const firstLink = "https://google.com";
   const secondLink = "https://youtube.com";
-  const maxFirstLinkVisits = 3; // Change this to control how many times to show first link
 
+  // Check if visit count exists
   let visits = localStorage.getItem("visitCount");
 
   if (!visits) {
-    visits = 1;
-  } else {
-    visits = parseInt(visits) + 1;
-  }
-
-  localStorage.setItem("visitCount", visits);
-
-  if (visits <= maxFirstLinkVisits) {
+    // First visit
+    localStorage.setItem("visitCount", 1);
     window.location.href = firstLink;
   } else {
+    // Second or more visit
+    localStorage.setItem("visitCount", parseInt(visits) + 1);
     window.location.href = secondLink;
   }
 </script>
@@ -31,4 +27,5 @@
 <h1>Watch Now</h1>
 </body>
 </html>
+
 
